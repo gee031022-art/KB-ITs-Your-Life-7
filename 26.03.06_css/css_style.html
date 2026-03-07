@@ -1,0 +1,119 @@
+<!-- CSS Styles 
+ 외부 css 파일 or 내부 블럭 or 태그 속성
+ outercss , inner css, inline styles-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 내부 블럭 스타일 */
+      h2 {
+        background-color: #b59696;
+      }
+      span {
+        color: red;
+      }
+      #span1 {
+        color: orange;
+      }
+      #span2 {
+        color: green;
+        padding: 30px 0;
+      }
+      #span3 {
+        color: blue;
+      }
+      .span4 {
+        color: purple;
+        padding: 50px;
+        list-style-type: none;
+      }
+      input[type='checkbox'] {
+        margin: 100px;
+        width: 20px;
+        height: 20px;
+      }
+      ul > li {
+        background-color: #3ee2c75d;
+      }
+      /* table > tbody > tr << tbody는 필수 까먹으면 그냥 띄어쓰기 */
+      table th {
+        background-color: #2bf1d0;
+        border-color: rgb(255, 1, 1);
+        border-width: 2px;
+        border-style: solid;
+      }
+      table td {
+        background-color: hsl(0, 83%, 49%);
+      }
+      nav ul {
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+        background-color: aquamarine;
+      }
+      nav ul li a:hover {
+        text-decoration: none;
+        color: rgb(243, 17, 17);
+      }
+      nav ul li:nth-child(2n) {
+        border-color: rgb(129, 88, 38);
+        border-width: 2px;
+        border-style: dotted;
+      }
+    </style>
+
+    <!-- 외부 css 파일 -->
+    <link rel="stylesheet" href="외부css파일.css" />
+  </head>
+  <body>
+    <!-- 인라인 스타일 -->
+    <h1 style="color: blue">인라인 스타일</h1>
+    <p style="color: green">
+      인라인 스타일은 태그의 style 속성에 직접 작성하는 방식입니다.
+    </p>
+    <h2>내부 블럭 스타일</h2>
+    <h3>외부 css 파일</h3>
+    <span>인라인 스타일</span>
+    <ul>
+      <li id="span1">사과</li>
+      <li id="span2">바나나</li>
+      <li id="span3">오렌지</li>
+      <li class="span4">포도</li>
+    </ul>
+    <form>
+      <input type="checkbox" checked value="1" />체크박스1
+      <input type="checkbox" value="2" />체크박스2
+      <input type="checkbox" value="3" />체크박스3
+      <hr />
+      <input type="radio" value="1" />라디오버튼
+      <input type="text" value="텍스트 입력란" />
+      <input type="button" value="버튼" />
+    </form>
+    <hr />
+    <br />
+    <table>
+      <tr>
+        <th>제목1</th>
+        <th>제목2</th>
+      </tr>
+      <tr>
+        <td>내용1</td>
+        <td>내용2</td>
+      </tr>
+      <tr>
+        <td>내용3</td>
+        <td>내용4</td>
+      </tr>
+    </table>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

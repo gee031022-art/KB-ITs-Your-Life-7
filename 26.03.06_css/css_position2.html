@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* y가 absolute이므로 부모인 y의 위치를 기준으로 r,b,g의 위치가 결정됨 */
+      /* y가 relative이므로 부모인 y의 위치는 원래 위치에서 top과 left값 만큼 이동하지만 자식인 r,b,g의 위치는 원래 위치에서 top과 left값 만큼 이동하지 않고 부모인 y의 원래 위치를 기준으로 top과 left값 만큼 이동함 */
+      /* y가 relative이므로 부모인 y의 위치를 기준으로 r,b,g의 위치가 결정됨 */
+      .y {
+        background-color: yellow;
+        width: 400px;
+        height: 400px;
+        position: relative;
+        top: 100px;
+        left: 200px;
+      }
+      .r {
+        background-color: red;
+        position: relative;
+        top: 300px;
+        left: 300px;
+      }
+      .b {
+        background-color: blue;
+      }
+      .g {
+        background-color: green;
+      }
+      .r,
+      .b,
+      .g {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="y">
+      Yellow
+      <div class="r">Red</div>
+      <div class="b">Blue</div>
+      <div class="g">Green</div>
+    </div>
+  </body>
+</html>
