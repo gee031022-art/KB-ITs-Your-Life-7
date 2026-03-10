@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+      let a, b, c;
+      a = 2;
+      b = 3;
+      c = a / b;
+      console.log(c); // 0.6666666666666666
+      // Operator examples will go here
+      // 산술연산자 : +, -, *, /, %
+      // 대입연산사 : =, +=, -=, *=, /=, %=
+      a += 10;
+      console.log(a); // 12
+      // 비교연산자 : ==, ===, !=, !==, >, <, >=, <=
+      a = 10;
+      console.log(a == '10'); // true (값만 비교)
+      console.log(a === '10'); // false (값과 타입 모두 비교)
+      // 논리연산자 : &&, ||, !
+      console.log(a > 5 && a < 15); // true
+      console.log(a < 5 || a > 15); // false
+      console.log(!(a === 10)); // false
+      // 단항연산자 : ++, --
+      a++;
+      // 삼항연산자 : condition ? exprIfTrue : exprIfFalse
+      let result = a > 10 ? 'Greater than 10' : '10 or less';
+
+      //형변환
+      //자동 형변환
+      console.log('5' + 10); // '510' (문자열로 변환)
+      console.log('5' - 10); // -5 (숫자로 변환)
+      a = '5';
+      console.log(a); // '5'
+      console.log(Number(a)); // 5
+      console.log(Boolean(a)); // true
+      console.log(1 - true); // 0 (true는 1로 변환)
+      console.log(true + '2'); // 'true2' (true는 문자열로 변환)
+      console.log(true - '2'); // -1 (true는 1로 변환)
+
+      //강제 형변환
+      console.log(String(5)); // '5'
+      console.log(!!'hello'); // true
+      console.log(typeof String(2)); // string
+      Number('123'); // 123
+      Number('abc'); // NaN (숫자로 변환할 수 없는 경우)
+    </script>
+  </head>
+  <body></body>
+</html>

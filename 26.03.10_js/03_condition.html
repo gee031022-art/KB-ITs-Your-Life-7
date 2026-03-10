@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+      let a = 10;
+      if (a > 5) {
+        console.log('a는 5보다 큽니다.');
+      } else {
+        console.log('a는 5보다 작거나 같습니다.');
+      }
+
+      // if-else if-else 구조
+      let score = 85;
+      if (score >= 90) {
+        console.log('A');
+      } else if (score >= 80) {
+        console.log('B');
+      } else if (score >= 70) {
+        console.log('C');
+      } else {
+        console.log('F');
+      }
+
+      // switch-case 구조
+      let day = '월요일';
+      switch (day) {
+        case '월요일':
+          console.log('오늘은 월요일입니다.');
+          break;
+        case '화요일':
+          console.log('오늘은 화요일입니다.');
+          break;
+        case '수요일':
+          console.log('오늘은 수요일입니다.');
+          break;
+        default:
+          console.log('오늘은 월, 화, 수요일이 아닙니다.');
+          break;
+      }
+
+      let randumNum = parseInt(Math.random() * 3) + 1; // 1~3 사이의 랜덤 정수 생성
+      console.log('랜덤 숫자:', randumNum);
+      let userStr = window.prompt('가위-1, 바위-2, 보-3 중 하나를 입력하세요.');
+      let uerNum = parseInt(userStr);
+
+      console.log('사용자가 낸 숫자:', uerNum);
+
+      //사용자 입장에서 이겼습니다, 졌습니다, 비겼습니다.
+      console.log('사용자:', uerNum);
+      console.log('컴퓨터:', randumNum);
+
+      if (uerNum === randumNum) {
+        console.log('비겼습니다.');
+      } else if (
+        (uerNum === 1 && randumNum === 3) ||
+        (uerNum === 2 && randumNum === 1) ||
+        (uerNum === 3 && randumNum === 2)
+      ) {
+        console.log('이겼습니다.');
+      } else {
+        console.log('졌습니다.');
+      }
+
+      //스위치
+      switch (true) {
+        case uerNum === randumNum:
+          console.log('비겼습니다.');
+          break;
+        case (uerNum === 1 && randumNum === 3) ||
+          (uerNum === 2 && randumNum === 1) ||
+          (uerNum === 3 && randumNum === 2):
+          console.log('이겼습니다.');
+          break;
+        default:
+          console.log('졌습니다.');
+          break;
+      }
+
+      const year = 2026;
+      //년도를 12로 나눈 나머지 값이 0이면 원숭이띠, 1이면 닭띠, 2이면 개띠, 3이면 돼지띠, 4이면 쥐띠, 5이면 소띠, 6이면 호랑이띠, 7이면 토끼띠, 8이면 용띠, 9이면 뱀띠, 10이면 말띠, 11이면 양띠입니다.
+      switch (year % 12) {
+        case 0:
+          console.log(`${year}년은 원숭이띠입니다.`);
+          break;
+        case 1:
+          console.log(`${year}년은 닭띠입니다.`);
+          break;
+        case 2:
+          console.log(`${year}년은 개띠입니다.`);
+          break;
+        case 3:
+          console.log(`${year}년은 돼지띠입니다.`);
+          break;
+        case 4:
+          console.log(`${year}년은 쥐띠입니다.`);
+          break;
+        case 5:
+          console.log(`${year}년은 소띠입니다.`);
+          break;
+        case 6:
+          console.log(`${year}년은 호랑이띠입니다.`);
+          break;
+        case 7:
+          console.log(`${year}년은 토끼띠입니다.`);
+          break;
+        case 8:
+          console.log(`${year}년은 용띠입니다.`);
+          break;
+        case 9:
+          console.log(`${year}년은 뱀띠입니다.`);
+          break;
+        case 10:
+          console.log(`${year}년은 말띠입니다.`);
+          break;
+        case 11:
+          console.log(`${year}년은 양띠입니다.`);
+          break;
+      }
+      //   const zodiac = [
+      //     '원숭이띠',
+      //     '닭띠',
+      //     '개띠',
+      //     '돼지띠',
+      //     '쥐띠',
+      //     '소띠',
+      //     '호랑이띠',
+      //     '토끼띠',
+      //     '용띠',
+      //     '뱀띠',
+      //     '말띠',
+      //     '양띠',
+      //   ];
+      //   const zodiacIndex = year % 12;
+      //   console.log(`${year}년은 ${zodiac[zodiacIndex]}입니다.`);
+
+      const today = new Date();
+      const year1 = today.getFullYear();
+      const month = today.getMonth() + 1; // 월은 0부터 시작
+      const date = today.getDate();
+      console.log(`오늘은 ${year1}년 ${month}월 ${date}일입니다.`);
+    </script>
+  </head>
+  <body></body>
+</html>
