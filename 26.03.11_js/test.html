@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+      window.onload = function () {
+        let items = document.querySelectorAll('.item');
+        console.log(items); // NodeList(3) [div.item, div.item, div.item]
+      };
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li class="item" data-writher="ji">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+      <li class="item">Item 4</li>
+      <li class="item">Item 5</li>
+    </ul>
+  </body>
+</html>

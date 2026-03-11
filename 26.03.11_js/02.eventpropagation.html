@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="width: 500px; height: 300px; background-color: yellow">
+      <a href="http://kbstar.com">KB</a>
+    </div>
+    <script>
+      console.log(this);
+      //DOM트리에서 a객체 찾기
+      //a객체에서 click이벤트가 발생시 배경 red
+      //kb.com이동 안한다
+      const a = document.querySelector('div');
+
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        a.style.backgroundColor = 'red';
+        console.log('---div객체---');
+        console.log(this);
+        console.log(e.target);
+        console.log(e.currentTarget);
+      });
+    </script>
+    <!-- <script>
+      //DOM트리에서 a객체 찾기
+      //a객체에서 click이벤트가 발생시 배경 red
+      //kb.com이동 안한다
+      const a = document.querySelector('a');
+      a.addEventListener('click', function (e) {
+        a.style.backgroundColor = 'red';
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(this);
+      });
+      //DOM div객체 찾기
+      //div 클릭 이벤트 발생, 배경 색 green
+      const div = document.querySelector('div');
+      div.addEventListener('click', function () {
+        div.style.backgroundColor = 'green';
+      });
+    </script> -->
+  </body>
+</html>

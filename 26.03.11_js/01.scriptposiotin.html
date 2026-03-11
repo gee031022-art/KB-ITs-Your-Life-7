@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.addEventListener('load', function () {
+        //lodad 이벤트는 페이지가 완전히 로드된 후에 발생합니다. 모든 요소와 리소스가 로드된 후에 실행됩니다.
+        alert('4'); // 페이지가 완전히 로드된 후에 실행되는 이벤트 리스너입니다. 모든 요소와 리소스가 로드된 후에 실행됩니다. callback 함수로 작성된 익명 함수입니다. 이벤트가 발생하면 alert('4')가 실행됩니다.
+      });
+
+      window.onload = function () {
+        //onload 이벤트는 페이지가 완전히 로드된 후에 발생합니다. 모든 요소와 리소스가 로드된 후에 실행됩니다.
+        alert('5'); // 페이지가 완전히 로드된 후에 실행되는 이벤트 리스너입니다. 모든 요소와 리소스가 로드된 후에 실행됩니다. callback 함수로 작성된 익명 함수입니다. 이벤트가 발생하면 alert('5')가 실행됩니다.
+      };
+      alert('1');
+    </script>
+  </head>
+  <body>
+    <script>
+      alert('2');
+    </script>
+    <div>DIV</div>
+    <script>
+      alert('3');
+    </script>
+  </body>
+</html>
