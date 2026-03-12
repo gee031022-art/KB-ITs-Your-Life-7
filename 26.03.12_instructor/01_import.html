@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>모듈사용하기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module">
+      import { add, test } from './01_export.js';
+      console.log(add(4));
+      test(); //module내부에서 this는 undefined
+    </script>
+  </head>
+  <body></body>
+</html>
