@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 종류</title>
+    <style>
+      div.change2 {
+        /* display: none; */
+        visibility: hidden;
+      }
+    </style>
+    <script>
+      //DOM 완료, 자원이 모두 준비 되면 window 객체에서 load 이벤트가 발생
+      //widow.onload = function(){}
+      window.addEventListener('load', function () {
+        //DOM 트리에서 class 속성 값이 name 인 객체 찾기
+        //const는 변수 변동 안되게, 상수의 의미
+        const nameInputObj = document.querySelector('div.keyup>input.name');
+        //DOM 트리에서 class 속성 값이 name인 span 찾기
+        const nameSpanObj = document.querySelector('div.click span.name');
+        nameInputObj.addEventListener('keyup', function () {
+          nameSpanObj.innerHTML = nameInputObj.value;
+          //inner vs value 무슨 차이? input 태그는 value 속성 자동 대입 span태그는 value라는 어트리뷰트가 없다
+        });
+        //전체 동의 클릭 시 다른 약관 동의 처리
+        const checkAllObj = document.querySelector('input.check');
+        //DOM트리에서 name 속성값이 c인 input 객체들 찾기
+        const checkObjList = document.querySelectorAll('input[name = c]');
+        checkAllObj.addEventListener('click', function (e) {
+          //this
+          console.log(e.target.checked);
+          checkObjList.forEach(function (value, index) {
+            value.checked = e.target.checked;
+          });
+        });
+
+        //DOM트리에서 class 속성값이 sidu인 select 객체 찾기
+        const sidoObj = document.querySelector('div.change select.sido');
+        //DOM트리에서 class 속성값이 sigungu인 select 객체 찾기
+        const sigunguObj = document.querySelector('div.change2 select.sigungu');
+        //DOM트리에서 class 속성값이 change2인 div 객체 찾기
+        const sigunguDivObj = document.querySelector('div.change2');
+
+        sidoObj.addEventListener('click', function () {
+          console.log('클릭');
+        });
+
+        sidoObj.addEventListener('change', function () {
+          console.log('체인지');
+          let siguguData = '';
+
+          switch (this.value) {
+            case 'seoul':
+              // siguguData += '<option class='gu'>광진구</option>';
+              // siguguData += '<option>마포구</option>';
+              // siguguData += '<option>성동구</option>';
+              // siguguData += '<option>영등포구</option>';
+
+              // sigunguObj.innerHTML = siguguData;
+              const seoulGu = ['광진구', '마포구', '성동구', '영등포구'];
+              for (let gu of seoulGu) {
+                const optObj = document.childElement('option'); //element노드 생성
+                optObj.textContent = '광진구'; //text 노드 추가
+                optObj.clasName = 'gu'; //attribute노드 추가
+                sigunguObj.appendChild(optObj); //자식 노드로 연결
+              }
+              sigunguDivObj.style.visibility = 'visible';
+              break;
+
+            case 'busan':
+              siguguData += '<option>부산1구</option>';
+              siguguData += '<option>부산2구</option>';
+              siguguData += '<option>부산3구</option>';
+              siguguData += '<option>부산4구</option>';
+
+              sigunguObj.innerHTML = siguguData;
+              sigunguDivObj.style.visibility = 'visible';
+              break;
+            case 'jeju':
+              siguguData += '<option>제주1구</option>';
+              siguguData += '<option>제주2구</option>';
+              siguguData += '<option>제주3구</option>';
+              siguguData += '<option>제주4구</option>';
+
+              sigunguObj.innerHTML = siguguData;
+              sigunguDivObj.style.visibility = 'visible';
+              break;
+            default:
+              break;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="keyup">
+      <input type="text" class="name" placeholder="이름을 입력하세요" />
+    </div>
+    <div class="click">
+      <fieldset>
+        <legend><span class="name"></span>님 다음 정보를 확인해주세요</legend>
+        <input type="checkbox" class="check" /><span> 전체 동의 </span><br />
+
+        <input type="checkbox" name="c" value="terms " /><span
+          >필수 약관 동의</span
+        ><br />
+        <input type="checkbox" name="c" value="marketing" /><span
+          >마케팅 수신 동의</span
+        >
+      </fieldset>
+    </div>
+
+    <div class="change">
+      매장찾기
+      <select class="sido">
+        <option>시도를 선택하세요</option>
+        <option value="seoul">서울</option>
+        <option value="busan">부산</option>
+        <option value="jeju">제주도</option>
+      </select>
+    </div>
+    <div class="change2">
+      <select class="sigungu">
+        <!-- -->
+      </select>
+    </div>
+    <script></script>
+  </body>
+</html>
