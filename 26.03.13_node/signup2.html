@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>가입</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      window.addEventListener('load', function () {
+        //DOM트리에서 type속성값이 button인 input객체 찾기
+        const btDupchtObj = document.querySelector('input[type=button]');
+        btDupchtObj.addEventListener('click', function () {
+          //DOM트리에서 <input type="text" name="id" id="id" required />찾기
+          //id속성값이 id인 객체 찾기
+          const idObj = document.querySelector('#id'); //vlaue 속성에 자동저장
+          //객체의 value프로퍼티 idObj.value
+          //alert('${idObj.vlau}는 사용가능한 아이디입니다.');
+          //DOM트리에서 class속성값이 idducpchk객체 찾기
+          const spanDupchkObj = document.querySelector('.iddupchk');
+          spanDupchkObj.innerHTML = `${idObj.value}는 사용가능합니다.`;
+          //<input type="submit" value="가입하기" /> 버튼클릭
+          //submit버튼클릭 시 click이벤트 발생 > submit이 포함된 for의 submit이벤트 자동발생
+          const submitObj = document.querySelector('input[type=submit]');
+          submitObj.addEventListener('click', function () {
+            alert('제출이 클릭됨');
+          });
+        });
+        //submit버튼이 클릭 click이벤트 발생 > 버튼이 포함된 form에서 submit이벤트 자동발생
+        //> submit의 ...
+        //form객체도 찾기
+        const formObj = document.querySelector('form.signup');
+        formObj.addEventListener('submit', function (e) {
+          e.preventDefault(); //이벤트의 기본핸들러를 막기
+          //   alert('폼이 전송됨');
+
+          //비밀번호 값과 비밀번호 확인 값이 가른경우 '비밀번호가 틀렸습니다'
+
+          const pw = document.querySelector('#pw');
+          const pw2 = document.querySelector('#pw2');
+          if (pw.value !== pw2.value) {
+            alert('비밀번호가 다릅니다.');
+            // e.preventDefault(); //이벤트의 기본핸들러를 막기
+            return false;
+          }
+          //정상입력
+          formObj.method = 'post'; //this. 해도 똑같음
+          //formObj.action = 'http://kbstar.com';
+          formObj.action = 'http://localhost:3000/signup';
+          formObj.submit();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <form class="signup">
+      <!-- </form> method="post" action="http://kbstar.com"> -->
+      <label for="id">ID:</label>
+      <input type="text" name="id" id="id" required />
+      <input type="button" value="중복 확인" />
+      <span class="iddupchk"> </span>
+      <br />
+      <label for="pw">PW:</label>
+      <input type="password" name="pw" id="pw" required /><br />
+      <label for="pw2">PW 확인:</label>
+      <input type="password" id="pw2" required /><br />
+      <!-- name 은 컴퓨터로 넘어가니까 안받을거라 안적음-->
+      <label for="name">이름:</label>
+      <input type="text" name="name" id="name" required /><br />
+      <label for="email">이메일:</label>
+      <input type="email" name="email" id="email" required /><br />
+      <input type="submit" value="가입하기" />
+      <input type="reset" value="초기화" />
+      <button>가입</button
+      ><!--submit효과-->
+      <button type="reset">초기화</button>
+    </form>
+  </body>
+</html>
