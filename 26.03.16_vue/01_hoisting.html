@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호이스팅 실습</title>
+    <script>
+      //호이스팅은 코드를 실행하기 전 변수와 함수의 선언을 최상단으로 끌어올리는 것. 단, undefined 자료형이 됨
+      //호이스팅의 불편함을 해결하고자 ES6에서 let, const 가 제공됨
+
+      //console.log(a); a is not defined, err 발생
+
+      var a; //선언
+      console.log(a); //호출, undefined 출력됨
+
+      //호이스팅
+      console.log(b); //호출, undefined 변수 선언부분만 미리 호이스팅, b 변수 미리 선언
+      var b = 'hello'; //선언
+      console.log(b); //hello
+
+      //함수의 호이스팅
+      //1) 이름있는 함수
+      f1(); //호출
+      function f1() {
+        console.log('f1 함수입니다');
+      }
+      //2) 이름없는 함수
+      f2(); //호출시 오류: Cannot access 'f2' before initialization
+      const f2 = function () {
+        console.log('f2 함수입니다');
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
