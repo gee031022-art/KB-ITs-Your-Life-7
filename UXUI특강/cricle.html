@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 부모 박스 설정 */
+      .container {
+        width: 300px;
+        height: 200px;
+        border: 2px solid black;
+        position: relative; /* 자식의 absolute 배치의 기준점이 됨 */
+        margin: 20px;
+      }
+
+      /* 원 공통 스타일 */
+      .dot {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%; /* 원형 만들기 */
+        position: absolute; /* 절대 위치 사용 */
+      }
+
+      /* 각 원의 위치 설정 */
+      .red {
+        background-color: red;
+        top: 10px;
+        left: 10px;
+      }
+
+      .green {
+        background-color: green;
+        top: 10px;
+        right: 10px;
+      }
+
+      .yellow {
+        background-color: yellow;
+        bottom: 10px;
+        left: 10px;
+      }
+
+      .blue {
+        background-color: blue;
+        bottom: 10px;
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dot red"></div>
+      <div class="dot green"></div>
+      <div class="dot yellow"></div>
+      <div class="dot blue"></div>
+    </div>
+  </body>
+</html>

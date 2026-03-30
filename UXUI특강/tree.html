@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Card</title>
+    <style>
+      /* 1. 컨테이너를 상대 좌표(relative)로 설정하여 기준점을 잡습니다. */
+      .card-container {
+        position: relative;
+        width: 300px; /* 트리 이미지 크기에 맞춤 */
+        margin: 50px auto;
+      }
+
+      .card-container img {
+        width: 100%;
+        display: block;
+      }
+
+      /* 2. 글자들을 감싸는 영역을 이미지 위에 절대 좌표(absolute)로 띄웁니다. */
+      .letters {
+        position: absolute;
+        top: 80px; /* 트리의 적절한 위치로 조정 */
+        left: 50%; /* 가로 중앙 정렬을 위한 설정 */
+        transform: translateX(-50%);
+        z-index: 10; /* 이미보나 위로 오도록 설정 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box {
+        width: 40px;
+        height: 40px;
+        background: rgb(255, 243, 77);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        position: relative; /* 개별 위치 미세 조정을 위해 유지 */
+        margin-bottom: -5px; /* 박스 사이 간격 조정 */
+      }
+
+      /* 요청하신 대로 지그재그 느낌을 주는 미세 조정 */
+      .box:nth-child(1) {
+        left: -15px;
+      } /* M */
+      .box:nth-child(2) {
+        left: 15px;
+      } /* A */
+      .box:nth-child(3) {
+        left: -10px;
+      } /* R */
+      .box:nth-child(4) {
+        left: 10px;
+      } /* R */
+      .box:nth-child(5) {
+        left: 0px;
+      } /* Y */
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="letters">
+        <div class="box">M</div>
+        <div class="box">A</div>
+        <div class="box">R</div>
+        <div class="box">R</div>
+        <div class="box">Y</div>
+      </div>
+
+      <img src="christmastree.png" alt="tree" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* 미션 */
+.mission {
+  background-color: #fff7e6;
+  border: 1px solid #ffd591;
+  padding: 16px;
+  margin: 20px auto;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+/* 컨테이너 */
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 카드 */
+.card {
+  background-color: white;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* 제목 */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 상품 */
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: #444;
+}
+
+/* 총 금액 강조 */
+.total {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 버튼 영역 */
+.btn-group {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+/* 버튼 기본 */
+button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* 왼쪽 버튼 (덜 중요) */
+button:first-child {
+  background-color: #eee;
+  color: #333;
+}
+
+/* 오른쪽 버튼 (CTA 강조🔥) */
+button:last-child {
+  background-color: #2f80ed;
+  color: white;
+  font-weight: bold;
+}
+
+/* hover 효과 */
+button:hover {
+  opacity: 0.9;
+}
